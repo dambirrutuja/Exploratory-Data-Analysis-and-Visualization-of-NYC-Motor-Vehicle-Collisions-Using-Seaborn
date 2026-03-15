@@ -1,12 +1,12 @@
 # Exploratory-Data-Analysis-and-Visualization-of-NYC-Motor-Vehicle-Collisions-Using-Seaborn
-🚦 NYC Motor Vehicle Collisions – Data Analysis & Visualization
+🚦 NYC Motor Vehicle Collisions Analysis
+📊 Advanced Data Visualization Using Seaborn
 
-Course: IE6600 – Computation and Visualization for Analytics
-Project: Advanced Data Analysis and Visualization Using Seaborn
-Dataset: NYC Motor Vehicle Collisions – Crashes
-Source: NYC Open Data / Data.gov
-Group: Group 4
-Members:
+📚 Course: IE6600 – Computation and Visualization for Analytics
+🏫 Institution: Northeastern University
+📂 Dataset: NYC Motor Vehicle Collisions – Crashes (NYC Open Data / Data.gov)
+
+👥 Team Members
 
 Rutuja Dambir
 
@@ -16,344 +16,177 @@ Hiral Hitesh Rana
 
 📌 Project Overview
 
-This project presents a comprehensive Exploratory Data Analysis (EDA) and statistical investigation of the NYC Motor Vehicle Collisions – Crashes dataset using Python, Pandas, and Seaborn.
+Motor vehicle collisions are a major urban safety challenge in New York City.
+This project analyzes the NYC Motor Vehicle Collisions dataset to uncover patterns in traffic accidents using Python-based data analysis and Seaborn visualizations.
 
-Motor vehicle collisions are a major public safety concern in New York City. By analyzing collision records, this project aims to identify:
+The objective of this project is to identify:
 
-Temporal patterns in crash occurrences
+🚗 Collision frequency patterns
 
-Geographic differences across boroughs
+🕒 Time-of-day and seasonal trends
 
-Injury and fatality distributions
+📍 Geographic differences across boroughs
 
-Major contributing factors behind crashes
+🚑 Injury and fatality distributions
 
-The findings provide insights that may support traffic safety policy, urban planning, and mobility management.
+⚠️ Leading contributing factors behind crashes
 
-This project demonstrates practical skills in:
+The analysis demonstrates practical data analytics and visualization techniques used in real-world traffic safety research.
 
-Data acquisition
+🗂 Dataset Information
 
-Data cleaning and preprocessing
+The dataset was sourced from NYC Open Data (data.gov) and contains detailed records of motor vehicle collisions reported across New York City.
 
-Statistical analysis
+Key Attributes in the Dataset
 
-Advanced data visualization using Seaborn
+🕒 Temporal Data
 
-According to the project report, the dataset contains hundreds of thousands of collision records spanning multiple years, with rich temporal, spatial, and safety-related attributes.
+Crash date
 
-📊 Dataset Information
+Crash time
 
-Dataset Name: Motor Vehicle Collisions – Crashes
-Source: NYC Open Data / Data.gov
-Resource ID: h9gi-nx95
-Domain: Transportation / Public Safety
-Update Frequency: Weekly
+Year, month, and day of week
 
-Key Data Attributes
-
-The dataset includes:
-
-Temporal features
-
-crash_date
-
-crash_time
-
-Geographic features
-
-borough
-
-zip_code
-
-latitude
-
-longitude
-
-Injury and fatality counts
-
-number_of_persons_injured
-
-number_of_persons_killed
-
-pedestrian injuries
-
-cyclist injuries
-
-motorist injuries
-
-Causal factors
-
-contributing_factor_vehicle_1
-
-contributing_factor_vehicle_2
-
-Vehicle information
-
-vehicle_type_code1
-
-vehicle_type_code2
-
-These attributes enable both distributional analysis and relational analysis using Seaborn visualizations.
-
-⚙️ Data Processing Pipeline
-1️⃣ Data Acquisition
-
-The dataset was retrieved using the official NYC Open Data API endpoint.
-If a local CSV was available, it was used for reproducibility; otherwise the API was queried.
-
-2️⃣ Data Cleaning and Preparation
-
-Several preprocessing steps were performed to ensure data quality:
-
-Column Standardization
-
-All column names were standardized to lowercase with underscores to ensure consistent referencing.
-
-Duplicate Removal
-
-Duplicate rows were removed using:
-
-df.drop_duplicates()
-Data Type Conversion
-
-Several columns were converted to appropriate data types:
-
-Date fields → datetime
-
-Numeric variables → float or integer
-
-Categorical variables → cleaned string values
-
-Categorical Cleaning
-
-Placeholder values such as:
-
-'', 'nan', 'Unspecified'
-
-were replaced with proper NaN values.
-
-3️⃣ Feature Engineering
-
-Several derived variables were created to support the analysis:
-
-Feature	Description
-crash_hour	Hour extracted from crash time
-year	Year extracted from crash date
-month	Month number
-month_name	Full month name
-day_of_week	Day name
-is_weekend	Weekend indicator
-total_injured	Persons injured per collision
-total_killed	Persons killed per collision
-total_casualties	Injured + killed
-injury_flag	Indicates if injury occurred
-fatality_flag	Indicates if fatality occurred
-severity	Fatal / Injury / Property Damage
-
-These derived attributes enabled temporal pattern analysis and severity analysis.
-
-📈 Exploratory Data Analysis (EDA)
-
-All visualizations were generated using the Seaborn library.
-
-Collision Count by Borough
-
-A horizontal count plot shows collision frequency across NYC boroughs.
-
-Key observation:
-
-Brooklyn and Queens show the highest collision volumes, likely due to population density and traffic exposure.
-
-Collision Distribution by Hour
-
-A histogram with KDE overlay reveals a bimodal daily pattern:
-
-Morning commute peak → 7–9 AM
-
-Evening commute peak → 4–6 PM
-
-These peaks correspond to high commuter traffic periods.
-
-Collision Count by Day of Week
-
-Weekdays show higher collision volumes due to commuter activity.
-
-However, weekends may show higher severity during late-night hours.
-
-Collision Count by Month
-
-Seasonal trends were observed:
-
-Warmer months (May–October) show higher collision counts
-
-Winter months have slightly fewer collisions but potentially higher severity due to weather conditions.
-
-Injury Distribution
-
-A boxplot was used to analyze the distribution of injuries per collision.
-
-Findings:
-
-Most collisions result in zero or one injury
-
-The distribution is heavily right-skewed, with rare severe incidents.
-
-Weekend vs Weekday Injury Distribution
-
-A violin plot compares injury distributions across weekday and weekend collisions.
-
-This visualization reveals differences in the density of injuries between the two groups.
-
-Collision Severity Distribution
-
-Collisions were categorized into three severity levels:
-
-Property Damage Only
-
-Injury
-
-Fatal
-
-Most collisions fall into property damage or injury categories, while fatal collisions represent a small minority.
-
-Correlation Heatmap
-
-A Pearson correlation heatmap highlights relationships among numeric variables.
-
-Key insight:
-
-Total casualties strongly correlate with individual injury categories, which is expected because they are additive measures.
-
-Top Contributing Factors
-
-The most frequent crash causes include:
-
-Driver Inattention / Distraction
-
-Failure to Yield Right-of-Way
-
-Following Too Closely
-
-These behavioral factors are consistent with national crash statistics.
-
-📊 Statistical Analysis
-
-Two statistical tests were applied.
-
-Mann–Whitney U Test
-
-Used to compare injury distributions between:
-
-Weekday collisions
-
-Weekend collisions
-
-A non-parametric test was chosen because the injury distribution is highly skewed and non-normal.
-
-Chi-Square Test
-
-Used to evaluate the relationship between:
+📍 Geographic Data
 
 Borough
 
-Collision severity
+ZIP code
 
-This determines whether severity distribution differs across boroughs.
+Latitude and longitude
 
-🔎 Advanced Analysis
+🚑 Safety Outcomes
 
-Additional analyses were conducted to gain deeper insights.
+Number of persons injured
 
-Average Casualties by Hour
+Number of persons killed
 
-Although collisions peak during commute hours, late-night collisions often have higher average severity, potentially due to:
+Pedestrian, cyclist, and motorist injuries
 
-Impaired driving
-
-Higher speeds
-
-Lower traffic enforcement
-
-Fatal Collision Rate by Borough
-
-Fatality rates were calculated as:
-
-fatal collisions / total collisions
-
-This normalization helps identify boroughs with higher severity risk independent of collision volume.
-
-🔑 Key Findings
-Temporal Patterns
-
-Collisions peak during commute hours
-
-Weekdays have higher total collisions
-
-Late-night weekend crashes tend to be more severe
-
-Collision counts dropped sharply in 2020 due to COVID-19 mobility reductions
-
-Geographic Patterns
-
-Collision counts vary significantly by borough
-
-Fatal collision rates differ across boroughs after normalization
-
-Injury Patterns
-
-Most crashes cause no injuries
-
-A small number of severe crashes account for a large share of injuries
-
-Contributing Factors
-
-Driver behavior is the dominant cause:
+⚠️ Contributing Factors
 
 Driver inattention
 
 Failure to yield
 
-Unsafe following distance
+Unsafe driving behavior
 
-🛠️ Technologies Used
+These features allow both temporal and spatial analysis of collision patterns.
 
-Python
+🧹 Data Preparation
 
-Pandas
+Before performing analysis, the dataset underwent several preprocessing steps:
 
-NumPy
+Standardizing column names
 
-Seaborn
+Handling missing or inconsistent values
 
-Matplotlib
+Converting data types (dates, numeric fields)
 
-Jupyter Notebook
+Removing duplicate records
 
-📂 Repository Structure
-IE6600-NYC-Collision-Analysis
-│
-├── data/
-│   Motor_Vehicle_Collisions.csv
-│
-├── notebooks/
-│   collision_analysis.ipynb
-│
-├── outputs/
-│   plots/
-│
-├── report/
-│   IE6600_Project2_Report.pdf
-│
-└── README.md
-📚 Future Work
+Creating additional analytical features
 
-Future analysis could incorporate:
+Engineered Features
 
-Weather data
+Several derived variables were created to support the analysis:
 
-Speed camera locations
+crash hour
 
-Vision Zero enforcement data
+year and month
 
-Predictive models for high-risk collision events
+day of week
+
+weekend indicator
+
+total casualties per collision
+
+collision severity classification
+
+These transformations enabled more meaningful visualizations and statistical comparisons.
+
+📊 Exploratory Data Analysis
+
+Seaborn visualizations were used to explore multiple aspects of collision behavior across the city.
+
+Key Analyses Performed
+
+📍 Collision Count by Borough
+Shows which NYC boroughs experience the highest number of collisions.
+
+🕒 Collision Distribution by Hour
+Reveals daily traffic accident patterns, including peak commute hours.
+
+📅 Collisions by Day of Week and Month
+Highlights weekly and seasonal variations in collision frequency.
+
+🚑 Injury Distribution per Collision
+Analyzes how severe typical collisions are.
+
+⚠️ Top Contributing Factors
+Identifies the most common causes of collisions.
+
+📊 Correlation Heatmap
+Explores relationships between numerical safety variables.
+
+🔎 Key Insights
+
+Several important patterns emerged from the analysis:
+
+🕒 Temporal Patterns
+
+Collision frequency peaks during morning (7–9 AM) and evening (4–6 PM) commute hours.
+
+Weekdays have higher collision volumes due to commuter traffic.
+
+Warmer months show increased collision counts due to greater road usage.
+
+📍 Geographic Patterns
+
+Collision counts vary significantly across boroughs.
+
+Higher traffic density areas experience more collisions.
+
+🚑 Injury Patterns
+
+Most collisions result in property damage only.
+
+A small number of severe collisions account for most injuries.
+
+⚠️ Contributing Factors
+
+The most frequently reported crash causes include:
+
+Driver inattention or distraction
+
+Failure to yield right-of-way
+
+Following too closely
+
+These findings align with known driver behavior trends in traffic safety studies.
+
+🛠 Tools & Technologies
+
+The analysis was performed using the following tools:
+
+🐍 Python
+📊 Pandas – Data manipulation
+📈 Seaborn – Statistical data visualization
+📉 Matplotlib – Plot rendering
+📓 Jupyter Notebook – Interactive analysis environment
+
+📌 Conclusion
+
+The NYC Motor Vehicle Collisions dataset provides valuable insights into urban traffic safety patterns.
+
+This analysis highlights how collision behavior is influenced by:
+
+Traffic exposure during commute hours
+
+Geographic characteristics of boroughs
+
+Driver behavior and contributing factors
+
+Understanding these patterns can support traffic safety policies, urban planning decisions, and public awareness initiatives.
+
+⭐ This project demonstrates applied skills in data cleaning, exploratory analysis, statistical visualization, and real-world dataset interpretation.
