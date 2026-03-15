@@ -1,4 +1,4 @@
-# Exploratory-Data-Analysis-and-Visualization-of-NYC-Motor-Vehicle-Collisions-Using-Seaborn
+# Exploratory Data Analysis and Visualization of NYC Motor Vehicle Collisions Using Seaborn
 🚦 NYC Motor Vehicle Collisions Analysis
 📊 Advanced Data Visualization Using Seaborn
 
